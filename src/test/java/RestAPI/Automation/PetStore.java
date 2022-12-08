@@ -34,6 +34,7 @@ public class PetStore {
 		obj.put("userStatus", uS);
 		given().contentType(ContentType.JSON).log().all().when().body(obj.toJSONString()).post("user").then()
 				.statusCode(200).log().all();
+		
 
 	}
 

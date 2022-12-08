@@ -13,7 +13,7 @@ public class UsersTestData
 {
 	public static Object[][] users() throws IOException
 	{
-		FileInputStream fis=new FileInputStream("Path_of_excel_file\\multipleUsersTestData.xlsx");
+		FileInputStream fis=new FileInputStream("C:\\Users\\IBMADMIN\\Documents\\Training\\Module1\\APIAutomation\\Automation\\src\\test\\java\\RestAPI\\Automation\\multipleUsersTestData.xlsx");
 		XSSFWorkbook workbook=new XSSFWorkbook(fis);
 		XSSFSheet sheet=workbook.getSheetAt(0);
 		int totalRows=sheet.getLastRowNum();

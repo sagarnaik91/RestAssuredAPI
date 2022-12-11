@@ -1,3 +1,4 @@
+//Extract response field using HAMCREST
 package com.guru;
 
 import static io.restassured.RestAssured.given;
@@ -7,20 +8,22 @@ import java.util.Map;
 
 import org.testng.annotations.Test;
 
-import com.jayway.jsonpath.JsonPath;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 
 public class ExtractResponse {
 	static String jsonresponse;
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public static void fetchResponse() {
 		RestAssured.baseURI = "https://api.first.org/";
 		jsonresponse = given().when().get("data/v1/news").asString();
-		Map<String, ?> map = JsonPath.read(jsonresponse, "$.version");
-		System.out.println(map.toString());
+		JsonPath jes=new JsonPath(jsonresponse);
+		System.out.println(jes.getString("data[0].id"));
+		System.out.println(jes.getString("version"));
+		
 	}
 
 	//Response validation using hamcrest
@@ -32,7 +35,7 @@ public class ExtractResponse {
 		given().header("Authorization", "Bearer " + bearerToken).contentType(ContentType.JSON).body(body).when()
 				.post("user").then().assertThat().statusCode(200).and().body("type", equalTo("unknown1"));
 	}
-	@Test
+	@Test(enabled=false)
 	public static void hamcrest()
 	{
 		RestAssured.baseURI="https://petstore.swagger.io/v2";

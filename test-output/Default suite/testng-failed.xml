@@ -3,11 +3,31 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.guru.ReqBodyConstruction">
+      <class name="com.guru.PrintRequest">
         <methods>
-          <include name="reqBody"/>
+          <include name="printIfValidationFailed"/>
         </methods>
-      </class> <!-- com.guru.ReqBodyConstruction -->
+      </class> <!-- com.guru.PrintRequest -->
+      <class name="com.guru.OAuth">
+        <methods>
+          <include name="oauth"/>
+        </methods>
+      </class> <!-- com.guru.OAuth -->
+      <class name="com.guru.RestofCountries">
+        <methods>
+          <include name="border"/>
+        </methods>
+      </class> <!-- com.guru.RestofCountries -->
+      <class name="RestAPI.Automation.PetStorePractice">
+        <methods>
+          <include name="createUser"/>
+        </methods>
+      </class> <!-- RestAPI.Automation.PetStorePractice -->
+      <class name="RestAPI.Automation.GmailSignUp">
+        <methods>
+          <include name="createUsers" invocation-numbers="0 1 2 3"/>
+        </methods>
+      </class> <!-- RestAPI.Automation.GmailSignUp -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

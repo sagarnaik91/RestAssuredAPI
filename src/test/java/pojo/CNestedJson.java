@@ -20,7 +20,7 @@ public class CNestedJson {
 		add.setLine1("abc");
 		add.setLine2("xyz");
 
-		List<Integer> mobiles = new ArrayList<>();
+		List<Integer> mobiles = new ArrayList<Integer>();
 		mobiles.add(123);
 		mobiles.add(456);
 		details.setMobiles(mobiles);

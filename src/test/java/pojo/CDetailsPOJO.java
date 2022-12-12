@@ -8,6 +8,13 @@ public class CDetailsPOJO {
 	private String lastname;
 	private List<Integer> mobiles;
 	CAddressPOJO address;
+	List<COrgPOJO> org;
+	public List<COrgPOJO> getOrg() {
+		return org;
+	}
+	public void setOrg(List<COrgPOJO> org) {
+		this.org = org;
+	}
 	public String getName() {
 		return name;
 	}

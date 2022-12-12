@@ -28,6 +28,19 @@ public class CNestedJson {
 		address.setLine1("abc");
 		address.setLine2("432");
 		details.setAddress(address);
+		
+		COrgPOJO orgPojo1=new COrgPOJO();
+		orgPojo1.setOrg_name("abc");
+		orgPojo1.setOrg_exp(7);
+		
+		COrgPOJO orgPojo2=new COrgPOJO();
+		orgPojo2.setOrg_name("xyd");
+		orgPojo2.setOrg_exp(1);
+		List<COrgPOJO> org=new ArrayList<COrgPOJO>();
+		org.add(orgPojo1);
+		org.add(orgPojo2);
+		details.setOrg(org);
+		
 		ObjectMapper obj = new ObjectMapper();
 		String jes = obj.writerWithDefaultPrettyPrinter().writeValueAsString(details);
 		System.out.println(jes);
